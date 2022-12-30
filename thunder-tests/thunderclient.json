@@ -93,11 +93,11 @@
     "colId": "5be357d0-3fa4-4e87-8227-2c16ccf44f65",
     "containerId": "",
     "name": "count from recipient",
-    "url": "count/from/3f99117b-5b3d-4e54-98c6-9aead74e4371",
+    "url": "count/from/c32fe9a5-1739-4635-8beb-5ac772e49630",
     "method": "GET",
     "sortNum": 70000,
     "created": "2022-12-28T23:15:01.376Z",
-    "modified": "2022-12-28T23:16:49.682Z",
+    "modified": "2022-12-30T13:06:04.964Z",
     "headers": [],
     "params": [],
     "tests": []

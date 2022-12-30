@@ -1,15 +1,60 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { randomUUID } from 'node:crypto';
 import { Content } from 'src/domain/valueObjects/Content';
 import { Replace } from 'src/helpers/replace';
 
-export interface INotificationProps {
-  content: Content;
-  category: string;
-  recipientId: string;
-  readAt?: Date | null;
-  createdAt: Date;
-  updatedAt?: Date;
-  canceledAt?: Date | null;
+// export interface INotificationProps {
+//   content: Content;
+//   category: string;
+//   recipientId: string;
+//   readAt?: Date | null;
+//   createdAt: Date;
+//   updatedAt?: Date;
+//   canceledAt?: Date | null;
+// }
+
+export abstract class INotificationProps {
+  @ApiProperty({
+    example: '7ab25ee7-9650-47c8-897f-d2044c601743',
+    description: 'The id of the recipient',
+  })
+  public recipientId: string;
+
+  @ApiProperty({
+    example: 'message',
+    description: 'The category of the notification',
+  })
+  public category: string;
+
+  @ApiProperty({
+    example: 'Olá, tudo bem?',
+    description: 'The content of the notification',
+  })
+  public content: Content;
+
+  @ApiProperty({
+    example: '2021-01-01T00:00:00.000Z',
+    description: 'The date when the notification was created',
+  })
+  public createdAt: Date;
+
+  @ApiProperty({
+    example: '2021-01-01T00:00:00.000Z',
+    description: 'The date when the notification was updated',
+  })
+  public updatedAt?: Date;
+
+  @ApiProperty({
+    example: '2021-01-01T00:00:00.000Z',
+    description: 'The date when the notification was read',
+  })
+  public readAt?: Date | null;
+
+  @ApiProperty({
+    example: '2021-01-01T00:00:00.000Z',
+    description: 'The date when the notification was canceled',
+  })
+  public canceledAt?: Date | null;
 }
 
 type NotificationProps = Replace<INotificationProps, { createdAt?: Date }>;
