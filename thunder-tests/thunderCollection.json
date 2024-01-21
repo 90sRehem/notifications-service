@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "_id": "5be357d0-3fa4-4e87-8227-2c16ccf44f65",
+    "colName": "notifications-service",
+    "created": "2022-12-27T20:55:18.025Z",
+    "sortNum": 10000,
+    "folders": [],
+    "settings": {
+      "headers": [],
+      "tests": [],
+      "options": {
+        "baseUrl": "http://localhost:3000/notifications/"
+      }
+    }
+  }
+]
